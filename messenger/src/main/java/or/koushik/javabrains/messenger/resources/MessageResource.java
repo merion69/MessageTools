@@ -46,6 +46,7 @@ public class MessageResource {
 		Message newMessage = messageService.addMessage(message);
 		String newId = String.valueOf(newMessage.getId());
 		URI uri = uriInfo.getAbsolutePathBuilder().path(newId).build();
+		System.out.println(uri);
 		return Response.created(uri).entity(newMessage).build();
 	}
 	
